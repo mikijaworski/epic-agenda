@@ -1,6 +1,6 @@
-1.Passar listview del to do al EpicAgenda.
-2. Accedir als contactes del telefon 
-3. fer que surtin al listview
+1.Passar listview del to do al EpicAgenda. --> FET
+2. Accedir als contactes del telefon  --> FET
+3. Agafar tots els contactes i fer que surtin al listview
 4. Crear accions per editar, eliminar i crear contactes
 5. Fer que es guardin al listview
 *Si tenim temps guardar els contactes creats al app fer que es guardin a la agenda del mobil*
