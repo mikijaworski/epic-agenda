@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "1062077072076",
+    "firebase_url": "https://agenda-ms-dam20.firebaseio.com",
+    "project_id": "agenda-ms-dam20",
+    "storage_bucket": "agenda-ms-dam20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062077072076:android:212affddef4e13a2e4b869",
+        "android_client_info": {
+          "package_name": "com.agendadam.moco"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ZOf6G3hqidO6UQzasOt7-YR17r-7g6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1062077072076:android:614c296727c68ee6e4b869",
+        "android_client_info": {
+          "package_name": "com.example.epicagenda"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4ZOf6G3hqidO6UQzasOt7-YR17r-7g6E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
