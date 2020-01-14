@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name='Epic Agenda App'
+rootProject.name='Epic Agenda'
