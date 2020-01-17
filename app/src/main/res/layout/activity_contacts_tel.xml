@@ -10,9 +10,45 @@
         android:id="@+id/contactesView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toTopOf="@+id/main_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </ListView>
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/import_firebase"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="ExportToFirebase"
+            app:srcCompat="@mipmap/ic_export_icon_foreground" />
+
+        <ImageButton
+            android:id="@+id/add_new_contact"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:onClick="AddNewContact"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <!-- <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="importar a firebase" /> -->
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
