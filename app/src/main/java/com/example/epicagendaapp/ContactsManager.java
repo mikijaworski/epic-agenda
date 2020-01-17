@@ -10,7 +10,7 @@ import android.provider.ContactsContract.CommonDataKinds;
 public class ContactsManager {
     private final int CONTACT_PICKER_RESULT = 898;
     private Activity activity;
-    
+
     public ContactsManager(Activity activity){
         this.activity = activity;
     }

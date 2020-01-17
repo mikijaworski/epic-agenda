@@ -1,63 +1,42 @@
 {
   "project_info": {
-    "project_number": "1062077072076",
-    "firebase_url": "https://agenda-ms-dam20.firebaseio.com",
-    "project_id": "agenda-ms-dam20",
-    "storage_bucket": "agenda-ms-dam20.appspot.com"
+    "project_number": "581050703995",
+    "firebase_url": "https://epicagenda.firebaseio.com",
+    "project_id": "epicagenda",
+    "storage_bucket": "epicagenda.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1062077072076:android:212affddef4e13a2e4b869",
+        "mobilesdk_app_id": "1:581050703995:android:124ed9f7a9e75d92b102de",
         "android_client_info": {
-          "package_name": "com.agendadam.moco"
+          "package_name": "com.example.epicagendaapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+          "client_id": "581050703995-7vecrsvic8vu83nvbclqfkth243k0c0d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.epicagendaapp",
+            "certificate_hash": "902e28cc3faec20e41b53b175bf6510aa35b71df"
+          }
+        },
+        {
+          "client_id": "581050703995-0ih821ehp2etb6053vtvrlcoj363k4us.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA4ZOf6G3hqidO6UQzasOt7-YR17r-7g6E"
+          "current_key": "AIzaSyCQkFPWRRSVTYCOS0TB5xv9rppoyNg-ioA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1062077072076:android:614c296727c68ee6e4b869",
-        "android_client_info": {
-          "package_name": "com.example.epicagenda"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyA4ZOf6G3hqidO6UQzasOt7-YR17r-7g6E"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1062077072076-skf13stgt5p420u9e083l572n6ojqqsk.apps.googleusercontent.com",
+              "client_id": "581050703995-0ih821ehp2etb6053vtvrlcoj363k4us.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
