@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle(getString(R.string.app_name));
         // Obtener referencia de Auth Firebase
         auth = FirebaseAuth.getInstance();
         // Obtener usuario actual
@@ -277,5 +275,13 @@ public class MainActivity extends AppCompatActivity {
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
+    }
+
+    public void OpenMobileContacts(View view) {
+
+    }
+
+    public void OpenFirebaseContacts(View view) {
+
     }
 }

@@ -19,7 +19,6 @@
             android:label="@string/title_activity_login_firebase" />
         <activity android:name=".ContactsTelActivity" />
         <activity android:name=".AddNewContact"></activity>
-        <activity android:name=".ContactsTelActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
