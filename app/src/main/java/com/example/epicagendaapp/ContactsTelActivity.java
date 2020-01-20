@@ -109,4 +109,9 @@ public class ContactsTelActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddNewContact.class);
         startActivity(intent);
     }
+
+    public void GoBack(View view) {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
+    }
 }
