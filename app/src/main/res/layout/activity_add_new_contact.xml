@@ -29,8 +29,8 @@
         android:layout_marginRight="35dp"
         android:ems="10"
         android:gravity="clip_horizontal|center"
+        android:hint="Contact Name"
         android:inputType="textPersonName"
-        android:text="Name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/title" />
@@ -44,9 +44,22 @@
         android:layout_marginRight="35dp"
         android:ems="10"
         android:gravity="clip_horizontal|center"
-        android:inputType="textPersonName"
-        android:text="Number"
+        android:hint="Contact Number"
+        android:inputType="phone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contact_name" />
+
+    <Button
+        android:id="@+id/add_contact"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="35dp"
+        android:onClick="AddContact"
+        android:text="add contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/contact_number" />
 </androidx.constraintlayout.widget.ConstraintLayout>
