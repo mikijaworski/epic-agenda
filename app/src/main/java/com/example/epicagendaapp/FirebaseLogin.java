@@ -32,7 +32,7 @@ public class FirebaseLogin extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         // Si la instancia es distinta de null
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(FirebaseLogin.this, MainActivity.class));
+            startActivity(new Intent(FirebaseLogin.this, FirebaseMain.class));
             finish();
         }
         // Establecer la vista ahora
@@ -96,7 +96,7 @@ public class FirebaseLogin extends AppCompatActivity {
                                         Toast.makeText(FirebaseLogin.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(FirebaseLogin.this, MainActivity.class);
+                                    Intent intent = new Intent(FirebaseLogin.this, FirebaseMain.class);
                                     startActivity(intent);
                                     finish();
                                 }

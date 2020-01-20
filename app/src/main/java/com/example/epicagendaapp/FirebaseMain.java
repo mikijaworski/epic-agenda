@@ -11,14 +11,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class FirebaseMain extends AppCompatActivity {
 
     private Button btnChangeEmail, btnChangePassword, btnSendResetEmail, btnRemoveUser,
             changeEmail, changePassword, sendEmail, remove, signOut;
@@ -44,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user == null) {
                     // Estado de autenticación del usuario cambiado - el usuario es nulo
                     // Iniciar actividad de inicio de sesión
-                    startActivity(new Intent(MainActivity.this, FirebaseLogin.class));
+                    startActivity(new Intent(FirebaseMain.this, FirebaseLogin.class));
                     finish();
                 }
             }
@@ -107,11 +106,11 @@ public class MainActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task task) {
                                     // Muestra un mensaje si la actualización fue correcta de lo contrario mostrara que no se pudo actualizar
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "La dirección de correo electrónico está actualizada. Por favor inicie sesión con una nueva identificación de correo electrónico!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(FirebaseMain.this, "La dirección de correo electrónico está actualizada. Por favor inicie sesión con una nueva identificación de correo electrónico!", Toast.LENGTH_LONG).show();
                                         signOut();
                                         progressBar.setVisibility(View.GONE);
                                     } else {
-                                        Toast.makeText(MainActivity.this, "¡No se pudo actualizar el correo electrónico!", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(FirebaseMain.this, "¡No se pudo actualizar el correo electrónico!", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
@@ -156,11 +155,11 @@ public class MainActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task task) {
                                         // Mostrar mensaje si se logro actualizar la contraseña
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(MainActivity.this, "La contraseña se actualiza, inicia sesión con una nueva contraseña.", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(FirebaseMain.this, "La contraseña se actualiza, inicia sesión con una nueva contraseña.", Toast.LENGTH_SHORT).show();
                                             signOut();
                                             progressBar.setVisibility(View.GONE);
                                         } else {
-                                            Toast.makeText(MainActivity.this, "Error al actualizar la contraseña!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(FirebaseMain.this, "Error al actualizar la contraseña!", Toast.LENGTH_SHORT).show();
                                             progressBar.setVisibility(View.GONE);
                                         }
                                     }
@@ -201,10 +200,10 @@ public class MainActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task task) {
                                     // Mostrar un mensaje si se logro resetear la contraseña o si ocurrio un problema
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "Restablecer la contraseña de correo electrónico se envía!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(FirebaseMain.this, "Restablecer la contraseña de correo electrónico se envía!", Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                     } else {
-                                        Toast.makeText(MainActivity.this, "Error al enviar el correo electrónico de reinicio!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(FirebaseMain.this, "Error al enviar el correo electrónico de reinicio!", Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
@@ -229,12 +228,12 @@ public class MainActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task task) {
                                     // Mostrar un mensaje si se logro eliminar el correo electronico o si ocurrio un problema
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "Tu perfil ha sido eliminado :( ¡Crea una cuenta ahora!", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                                        Toast.makeText(FirebaseMain.this, "Tu perfil ha sido eliminado :( ¡Crea una cuenta ahora!", Toast.LENGTH_SHORT).show();
+                                        startActivity(new Intent(FirebaseMain.this, FirebaseMain.class));
                                         finish();
                                         progressBar.setVisibility(View.GONE);
                                     } else {
-                                        Toast.makeText(MainActivity.this, "¡No se borró tu cuenta!", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(FirebaseMain.this, "¡No se borró tu cuenta!", Toast.LENGTH_SHORT).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
