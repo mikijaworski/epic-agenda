@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 if (user == null) {
                     // Estado de autenticación del usuario cambiado - el usuario es nulo
                     // Iniciar actividad de inicio de sesión
-                    startActivity(new Intent(MainActivity.this, MainActivity.class));
+                    startActivity(new Intent(MainActivity.this, FirebaseLogin.class));
                     finish();
                 }
             }

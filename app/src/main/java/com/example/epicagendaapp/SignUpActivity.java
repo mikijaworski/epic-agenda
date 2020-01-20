@@ -29,7 +29,7 @@ public class SignUpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_firebase);
+        setContentView(R.layout.activity_sign_up);
         // Obtener instancia de autenticación de Firebase
         auth = FirebaseAuth.getInstance();
         // Obtener referencias de objectos
@@ -38,7 +38,7 @@ public class SignUpActivity extends AppCompatActivity {
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
-        btnResetPassword = (Button) findViewById(R.id.btn_reset_password);
+        btnResetPassword = findViewById(R.id.btn_reset_password);
         // Clic para ir a la clase de resetear contraseña
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
