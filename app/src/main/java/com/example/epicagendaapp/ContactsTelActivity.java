@@ -132,10 +132,6 @@ public class ContactsTelActivity extends AppCompatActivity {
         return contactList;
     }
 
-    public void ExportToFirebase(View view) {
-
-
-    }
 
     public void AddNewContact(View view) {
         Intent intent = new Intent(this, AddNewContact.class);

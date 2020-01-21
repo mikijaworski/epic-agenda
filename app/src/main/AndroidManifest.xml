@@ -11,6 +11,7 @@
         android:roundIcon="@mipmap/descarga"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.login.ReadContactsFirebaseActivity"></activity>
         <activity android:name=".SignUpActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".FirebaseLogin" />
@@ -19,9 +20,7 @@
             android:label="@string/title_activity_login_firebase" />
         <activity android:name=".ContactsTelActivity" />
         <activity android:name=".AddNewContact" />
-        <activity android:name=".FirebaseMain">
-
-        </activity>
+        <activity android:name=".FirebaseMain"></activity>
         <activity android:name=".MainMenuActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
