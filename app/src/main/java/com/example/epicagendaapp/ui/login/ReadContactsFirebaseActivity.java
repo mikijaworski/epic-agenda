@@ -36,11 +36,6 @@ public class ReadContactsFirebaseActivity extends AppCompatActivity {
 
         //this.setupListViewListeners();
 
-
-        contactesAdapter = new ContactAdapter(this, contactes);
-
-        contactesView.setAdapter(contactesAdapter);
-
         userDatabase = FirebaseDatabase.getInstance().getReference("usuaris");
         ValueEventListener userListener = new ValueEventListener() {
             @Override
@@ -60,6 +55,11 @@ public class ReadContactsFirebaseActivity extends AppCompatActivity {
             }
         };
         userDatabase.addValueEventListener(userListener);
+
+
+        contactesAdapter = new ContactAdapter(this, contactes);
+
+        contactesView.setAdapter(contactesAdapter);
     }
    /* private void setupListViewListeners() {
 

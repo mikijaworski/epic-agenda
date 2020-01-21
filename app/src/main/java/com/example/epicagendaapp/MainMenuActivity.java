@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.epicagendaapp.ui.login.ReadContactsFirebaseActivity;
+
 public class MainMenuActivity extends AppCompatActivity {
 
     Button mobileContacts;
@@ -59,7 +61,7 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     public void OpenFireBaseContacts(View view) {
-        Intent intent = new Intent(this, FirebaseMain.class);
+        Intent intent = new Intent(this, ReadContactsFirebaseActivity.class);
         startActivity(intent);
     }
 }
