@@ -15,7 +15,12 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
+
+import com.firebase.client.Firebase;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,6 +39,12 @@ public class ContactsTelActivity extends AppCompatActivity {
     private ArrayList<Contact> contactes;
     private ContactAdapter contactesAdapter;
 
+    EditText name;
+    EditText email;
+    EditText password;
+    ImageButton save;
+    Firebase firebase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +58,26 @@ public class ContactsTelActivity extends AppCompatActivity {
         contactesAdapter = new ContactAdapter(this, contactes);
 
         contactesView.setAdapter(contactesAdapter);
+
+        Firebase.setAndroidContext(this);
+        firebase = new Firebase("https://epicagenda.firebaseio.com/usuaris");
+
+        setContentView(R.layout.activity_contacts_tel);
+        name = findViewById(R.id.name);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        save = findViewById(R.id.import_firebase);
+        save.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                String value = name.getText().toString();
+                firebase.push().setValue(value);
+                String passw = password.getText().toString();
+                String em = email.getText().toString();
+                firebase.push().setValue(passw);
+                firebase.push().setValue(em);
+            }
+        });
     }
 
     private void setupListViewListeners() {
@@ -102,6 +133,7 @@ public class ContactsTelActivity extends AppCompatActivity {
     }
 
     public void ExportToFirebase(View view) {
+
 
     }
 
