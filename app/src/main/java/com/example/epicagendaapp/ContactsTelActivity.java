@@ -21,6 +21,8 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 
 import com.firebase.client.Firebase;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -39,11 +41,9 @@ public class ContactsTelActivity extends AppCompatActivity {
     private ArrayList<Contact> contactes;
     private ContactAdapter contactesAdapter;
 
-    EditText name;
-    EditText email;
-    EditText password;
-    ImageButton save;
+    ImageButton import_firebase;
     Firebase firebase;
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,30 +54,18 @@ public class ContactsTelActivity extends AppCompatActivity {
 
         this.setupListViewListeners();
         contactes = getContacts();
-
         contactesAdapter = new ContactAdapter(this, contactes);
-
         contactesView.setAdapter(contactesAdapter);
 
         Firebase.setAndroidContext(this);
         firebase = new Firebase("https://epicagenda.firebaseio.com/usuaris");
 
-        setContentView(R.layout.activity_contacts_tel);
-        name = findViewById(R.id.name);
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
-        save = findViewById(R.id.import_firebase);
-        save.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view){
-                String value = name.getText().toString();
-                firebase.push().setValue(value);
-                String passw = password.getText().toString();
-                String em = email.getText().toString();
-                firebase.push().setValue(passw);
-                firebase.push().setValue(em);
-            }
-        });
+        import_firebase = findViewById(R.id.import_firebase);
+        auth = FirebaseAuth.getInstance();
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            import_firebase.setEnabled(false);
+        }
     }
 
     private void setupListViewListeners() {
@@ -103,7 +91,7 @@ public class ContactsTelActivity extends AppCompatActivity {
         ArrayList<Contact> contactList = new ArrayList<>();
 
         ContentResolver cr = getContentResolver();
-        Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,null, null, null, null);
+        Cursor cur = cr.query(ContactsContract.Contacts.CONTENT_URI,null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME+" ASC");
         if (cur.getCount() > 0) {
             while (cur.moveToNext()) {
                 String id = cur.getString(cur.getColumnIndex(ContactsContract.Contacts._ID));
@@ -129,9 +117,14 @@ public class ContactsTelActivity extends AppCompatActivity {
         }
         cur.close();
 
+        System.out.println(contactList.size());
+
         return contactList;
     }
 
+    public void ExportToFirebase(View view) {
+        firebase.push().setValue(contactes);
+    }
 
     public void AddNewContact(View view) {
         Intent intent = new Intent(this, AddNewContact.class);
