@@ -2,6 +2,7 @@ package com.example.epicagendaapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -37,8 +38,28 @@ public class AddNewContact extends AppCompatActivity {
             intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
             intent.putExtra(ContactsContract.Intents.Insert.NAME, contact_name.getText());
             intent.putExtra(ContactsContract.Intents.Insert.PHONE, contact_number.getText());
-            startActivity(intent);
+            startActivityForResult(intent, 1);
         }
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        super.onActivityResult(requestCode, resultCode, intent);
+
+        if (requestCode == 1)
+        {
+            if (resultCode == Activity.RESULT_OK) {
+                Toast.makeText(this, "Added Contact", Toast.LENGTH_SHORT).show();
+            }
+            if (resultCode == Activity.RESULT_CANCELED) {
+                Toast.makeText(this, "Cancelled Added Contact", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public void Cancel(View view) {
+        Intent intent = new Intent(this, ContactsTelActivity.class);
+        startActivity(intent);
     }
 }
