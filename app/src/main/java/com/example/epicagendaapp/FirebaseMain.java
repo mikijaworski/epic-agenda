@@ -276,11 +276,8 @@ public class FirebaseMain extends AppCompatActivity {
         }
     }
 
-    public void OpenMobileContacts(View view) {
-
-    }
-
-    public void OpenFirebaseContacts(View view) {
-
+    public void MainMenu(View view) {
+        Intent intent = new Intent(this, MainMenuActivity.class);
+        startActivity(intent);
     }
 }

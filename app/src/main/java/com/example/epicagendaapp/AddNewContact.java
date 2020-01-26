@@ -8,13 +8,23 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.firebase.client.Firebase;
+
+import java.util.Random;
+
+import models.Contact;
 
 public class AddNewContact extends AppCompatActivity {
 
     EditText contact_name;
     EditText contact_number;
+    CheckBox add_firebase;
+
+    Firebase firebase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +33,10 @@ public class AddNewContact extends AppCompatActivity {
 
         contact_name = findViewById(R.id.contact_name);
         contact_number = findViewById(R.id.contact_number);
+        add_firebase =  findViewById(R.id.add_firebase);
+
+        Firebase.setAndroidContext(this);
+        firebase = new Firebase("https://epicagenda.firebaseio.com/usuaris");
     }
 
     public void AddContact(View view) {
@@ -38,7 +52,13 @@ public class AddNewContact extends AppCompatActivity {
             intent.setType(ContactsContract.RawContacts.CONTENT_TYPE);
             intent.putExtra(ContactsContract.Intents.Insert.NAME, contact_name.getText());
             intent.putExtra(ContactsContract.Intents.Insert.PHONE, contact_number.getText());
-            startActivityForResult(intent, 1);
+
+            if (add_firebase.isChecked()) {
+                Contact c = new Contact(String.valueOf(110), contact_name.getText().toString(), contact_number.getText().toString());
+                firebase.push().setValue(c);
+            }
+
+            startActivity(intent);
         }
 
     }

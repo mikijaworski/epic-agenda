@@ -39,12 +39,12 @@ public class MainMenuActivity extends AppCompatActivity {
 
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-                    Toast.makeText(this, "Permission granted to read your contacts.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "Permission granted to read your contacts.", Toast.LENGTH_SHORT).show();
                 } else {
 
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-                    Toast.makeText(this, "Permission denied to read your contacts.", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(this, "Permission denied to read your contacts.", Toast.LENGTH_SHORT).show();
                     mobileContacts.setEnabled(false);
                 }
                 return;

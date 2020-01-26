@@ -123,7 +123,10 @@ public class ContactsTelActivity extends AppCompatActivity {
     }
 
     public void ExportToFirebase(View view) {
-        firebase.push().setValue(contactes);
+
+        for (Contact contact: contactes) {
+            firebase.push().setValue(contact);
+        }
     }
 
     public void AddNewContact(View view) {

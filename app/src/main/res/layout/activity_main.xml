@@ -12,9 +12,7 @@
         android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="OpenFirebaseContacts"
         android:orientation="vertical"
-        android:text="Contactes del Firebase"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -154,6 +152,17 @@
             android:layout_marginTop="16dp"
             android:background="@color/colorPrimary"
             android:text="@string/btn_sign_out"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/main_menu"
+            style="?android:textAppearanceSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Main Menu"
+            android:onClick="MainMenu"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
 

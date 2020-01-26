@@ -33,22 +33,15 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:onClick="ExportToFirebase"
-            app:srcCompat="@mipmap/ic_export_icon_foreground" />
-
-        <ImageButton
-            android:id="@+id/add_new_contact"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:onClick="AddNewContact"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            android:onClick="OpenFirebaseSettings"
+            app:srcCompat="@android:drawable/ic_menu_preferences" />
 
         <ImageButton
             android:id="@+id/imageButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:onClick="MainMenu"
             app:srcCompat="@android:drawable/ic_menu_revert" />
 
 
